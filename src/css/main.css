@@ -60,12 +60,19 @@ body {
     padding-bottom: 30px;
     align-items: center;
     border-bottom: 2px solid #DEDEDE;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 .page-title {
     font-size: 32px;
     font-weight: 700;
     line-height: 100%;
+    text-align: center;
 }
 
 .loader {
@@ -127,6 +134,7 @@ body {
     padding: 14px;
     gap: 25px;
     transition: all 0.3s;
+    border-radius: 4px;
 }
 
 .form-point-element:hover {
@@ -193,7 +201,7 @@ body {
 }
 
 
-.form-button{
+.form-button {
     background-color: #f1f2f6;
     color: #1B2631;
     text-transform: uppercase;
@@ -208,13 +216,143 @@ body {
     border-radius: 15px;
     border: 2px solid #1B2631;
     font-weight: 600;
+    text-align: center;
 }
 
-.form-button:hover{
+.form-button:hover {
     color: #fff;
     border: none !important;
     background-color: #5898D2 !important;
     cursor: pointer;
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: popupFadeIn 0.3s;
+}
+
+@keyframes popupFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #5898D2;
+}
+
+.messenger-options {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.messenger-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.messenger-btn:hover {
+    transform: scale(1.05);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+}
+
+.telegram-btn {
+    background-color: #0088cc;
+}
+
+.form-group {
+    position: relative;
+    margin: 25px 0;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #999;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label {
+    top: -20px;
+    left: 0;
+    font-size: 14px;
+    color: #5898D2;
+}
+
+.submit-btn {
+    background-color: #5898D2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #3a7bb8;
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    margin: 0 auto 20px;
 }
 @media(max-width: 768px) {
 
@@ -223,12 +361,11 @@ body {
     .loader-progress[style*="width: 2%"] .loader-progress-text,
     .loader-progress[style*="width: 3%"] .loader-progress-text,
     .loader-progress[style*="width: 4%"] .loader-progress-text,
-    .loader-progress[style*="width: 5%"] .loader-progress-text, 
+    .loader-progress[style*="width: 5%"] .loader-progress-text,
     .loader-progress[style*="width: 6%"] .loader-progress-text,
     .loader-progress[style*="width: 7%"] .loader-progress-text,
     .loader-progress[style*="width: 8%"] .loader-progress-text,
-    .loader-progress[style*="width: 9%"] .loader-progress-text
-    {
+    .loader-progress[style*="width: 9%"] .loader-progress-text {
         color: #1B2631 !important;
         right: auto;
         font-weight: 700;
@@ -241,27 +378,125 @@ body {
     .loader-progress[style*="width: 2%"],
     .loader-progress[style*="width: 3%"],
     .loader-progress[style*="width: 4%"],
-    .loader-progress[style*="width: 5%"], 
-    .loader-progress[style*="width: 6%"] ,
+    .loader-progress[style*="width: 5%"],
+    .loader-progress[style*="width: 6%"],
     .loader-progress[style*="width: 7%"],
     .loader-progress[style*="width: 8%"],
-    .loader-progress[style*="width: 9%"]{
+    .loader-progress[style*="width: 9%"] {
         position: unset !important;
     }
-    
+
+    .white-block {
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .page-top {
+        padding-bottom: 15px;
+        gap: 20px;
+    }
+
+    .page-title {
+        font-size: 25px;
+    }
+
+    .form-block {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-point-title {
+        font-size: 18px;
+    }
+
+    .form-points-block {
+        padding-left: 15px;
+        gap: 20px;
+    }
+
+    .form-point-block {
+        gap: 10px;
+    }
+
+    .form-point-element {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .form-point-text {
+        gap: 10px;
+    }
+
+    .form-point-big-text {
+        font-size: 16px;
+    }
+
+    .form-point-small-text {
+        font-size: 12px;
+    }
+
+    .form {
+        gap: 20px;
+    }
+
+    .form-button {
+        font-size: 16px;
+        width: 100%;
+        height: 40px;
+        border-radius: 4px;
+    }
+
+    .form-point-element input {
+        min-width: 20px;
+        min-height: 20px;
+    }
 }
 
-@media(max-width: 450px){
-    .loader-progress-text{
+@media(max-width: 450px) {
+    .loader-progress-text {
         color: #1B2631 !important;
         right: auto;
         font-weight: 700;
         left: 50%;
         transform: translate(-50%, -50%)
     }
-    .loader-progress{
+
+    .loader-progress {
         position: unset !important;
     }
+
+    .wrapper {
+        padding: 0 10px;
+        margin: 15px auto;
+    }
+
+    .white-block {
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .loader {
+        height: 40px;
+        padding: 10px;
+    }
+    .form-title {
+        font-size: 18px;
+    }
+
+    .form-point-title {
+        font-size: 16px;
+    }
+
+    .form-points-block {
+        padding-left: 10px;
+        gap: 15px;
+    }
 }
-
-
