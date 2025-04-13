@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оценка эффективности</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="wrapper">
+            <div class="white-block flex-box-column">
+                <div class="page-top flex-box-column">
+                    <h1 class="page-title dark-text ">Оценка эффективности продаваемого объекта</h1>
+                    <div class="loader">
+                        <div class="loader-progress" id="loaderProgress">
+                            <span class="loader-progress-text white-text" id="loaderText">1%</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="form flex-box-column" id="evaluationForm">
+                    <div class="form-block flex-box-column">
+                        <span class="form-title blue-text">1. Этап № 1 - Подготовка</span>
+                        <div class="form-points-block flex-box-column">
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">1.2. Подготовка объекта и Анализ рынка
+                                    недвижимости</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point1-1" name="1" value="1-1" data-percent="2">
+                                    <label for="point1-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Аудит аналогичных предложений</span>
+                                        <span class="form-point-small-text grey-text">Сравнительный Маркетинговый анализ
+                                            -
+                                            определение правильной рыночной цены объекта.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point1-2" name="1" value="1-2" data-percent="2">
+                                    <label for="point1-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Предпродажная подготовка квартиры или
+                                            Хоумстейджинг</span>
+                                        <span class="form-point-small-text grey-text">Уборка в квартире, уборка лишних
+                                            вещей. Для хоумстейджинг косметический ремонт перемтановка мебели изменение
+                                            интерьера.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">1.3. Фото объекта</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="radio" id="point2-1" name="2" value="2-1" checked data-percent="1">
+                                    <label for="point2-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Фотографии низкого качества, либо в
+                                            ограниченном количестве</span>
+                                        <span class="form-point-small-text itallic dark-text">Мутные / темные /
+                                            сделанные в виде скриншотов с экрана телефона / менее 5 штук на весь
+                                            объект.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="radio" id="point2-2" name="2" value="2-2" data-percent="5">
+                                    <label for="point2-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Фотографии на телефон стандартного
+                                            качества</span>
+                                        <span class="form-point-small-text itallic dark-text">Фотографии среднего
+                                            качества сделанные на обычный телефон.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="radio" id="point2-3" name="2" value="2-3" data-percent="0">
+                                    <label for="point2-3" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Профессиональная фотосъемка на широкоугольный
+                                            объектив</span>
+                                        <span class="form-point-small-text grey-text">Угол обзора больше или равен 90"
+                                            выполнена коррекция по цвету.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">1.4. Визуализация объекта</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point3-1" name="3" value="3-1" data-percent="2">
+                                    <label for="point3-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Сделан видеообзор объекта и прилегающей
+                                            территории</span>
+                                        <span class="form-point-small-text grey-text">Проф съемка с переходами и
+                                            звуковой дорожкой.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point3-2" name="3" value="3-2" data-percent="5">
+                                    <label for="point3-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Виртуальный 3D тур</span>
+                                        <span class="form-point-small-text grey-text">Визуализация объекта для
+                                            региональной продажи и отсеивания не потенциальных покупателей.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point3-3" name="3" value="3-4" data-percent="3">
+                                    <label for="point3-3" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Планировка объекта</span>
+                                        <span class="form-point-small-text grey-text">Добавлена качественная и понятная
+                                            планировка объекта.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point3-4" name="3" value="3-4" data-percent="4">
+                                    <label for="point3-4" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Сайт квартиры</span>
+                                        <span class="form-point-small-text grey-text">Посадочная страница или Landing
+                                            page.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block flex-box-column">
+                        <span class="form-title blue-text">2. Этап № 2 - Реклама и маркетинг</span>
+                        <div class="form-points-block flex-box-column">
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">2.1. Подготовительный этап</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point4-1" name="4" value="4-1" data-percent="2">
+                                    <label for="point4-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Аватар покупателей минимум два</span>
+                                        <span class="form-point-small-text grey-text">Определить целевую аудиторию и ее
+                                            потребности.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point4-2" name="4" value="4-2" data-percent="3">
+                                    <label for="point4-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Продающий текст под целевую аудиторию</span>
+                                        <span class="form-point-small-text grey-text">Составить на основании созданных
+                                            портретов покупателей.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point4-3" name="4" value="4-3" data-percent="2">
+                                    <label for="point4-3" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Текст рассылок несколько вариантов по
+                                            назначению</span>
+                                        <span class="form-point-small-text grey-text">Для всех партнеров: ведущие банки
+                                            и АН, региональная сеть как собственна:
+                                            WhatsApp и Telegram.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point4-4" name="4" value="4-4" data-percent="2">
+                                    <label for="point4-4" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Баннер</span>
+                                        <span class="form-point-small-text grey-text">Для продаваемого объекта не выше 6
+                                            этажа.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">2.2. Рекламные каналы</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point5-1" name="5" value="5-1" data-percent="3"
+                                        data-percent="3">
+                                    <label for="point5-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Циан</span>
+                                        <span class="form-point-small-text grey-text">Выберите если используете.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point5-2" name="5" value="5-2" data-percent="2">
+                                    <label for="point5-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Авито</span>
+                                        <span class="form-point-small-text grey-text">Выберите если используете.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point5-3" name="5" value="5-4" data-percent="2">
+                                    <label for="point5-3" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Домклик</span>
+                                        <span class="form-point-small-text grey-text">Выберите если используете.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point5-4" name="5" value="5-4" data-percent="4">
+                                    <label for="point5-4" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Другие торговые площадки</span>
+                                        <span class="form-point-small-text grey-text">Более 40 досок для размещения
+                                            объекта.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point5-5" name="5" value="5-5" data-percent="2">
+                                    <label for="point5-5" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Партнерские АН / Ипотечные брокеры / Инвесторы
+                                            / Банки</span>
+                                        <span class="form-point-small-text grey-text">Специализированные группы whatsapp
+                                            и telegram.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point5-6" name="5" value="5-6" data-percent="2">
+                                    <label for="point5-6" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Социальные сети</span>
+                                        <span class="form-point-small-text grey-text">Инстаграм, ВКонтакте, Ютуб.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point5-7" name="5" value="5-7" data-percent="2">
+                                    <label for="point5-7" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Контекстная и таргетинговая реклама</span>
+                                        <span class="form-point-small-text grey-text">Посадочной страницы или Landing
+                                            page.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">2.3. Ликвидность рекламной компании</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point6-1" name="6" value="6-1" data-percent="6">
+                                    <label for="point6-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Продвижение объекта на рекламных
+                                            площадках</span>
+                                        <span class="form-point-small-text grey-text">Платная реклама / продвижение
+                                            объявления / ТОП реклама.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point6-2" name="6" value="6-2" data-percent="2">
+                                    <label for="point6-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Листовки</span>
+                                        <span class="form-point-small-text grey-text">Расклейка по району.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point6-3" name="6" value="6-3" data-percent="2">
+                                    <label for="point6-3" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Буклеты</span>
+                                        <span class="form-point-small-text grey-text">Презентационные буклеты для
+                                            потенциальных покупателей на показах.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point6-4" name="6" value="6-4" data-percent="2">
+                                    <label for="point6-4" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Брокер тур</span>
+                                        <span class="form-point-small-text grey-text">Для партнеров с презентационным
+                                            материалом и условиями вознаграждения.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block flex-box-column">
+                        <span class="form-title blue-text">3. Этап № 3 - Работа с покупателями</span>
+                        <div class="form-points-block flex-box-column">
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">3.1. Прием и обработка входящего потока</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point7-1" name="7" value="7-1" data-percent="4">
+                                    <label for="point7-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Круглосуточный прием звонков</span>
+                                        <span class="form-point-small-text grey-text">Колл-центр компании работает 24/7,
+                                            ни один звонок не будет пропущен.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point7-2" name="7" value="7-2" data-percent="2">
+                                    <label for="point7-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Сегментация</span>
+                                        <span class="form-point-small-text grey-text">Учет входящего потока, сортировка
+                                            по потребности, выявление потенциально заинтересованных.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point7-3" name="7" value="7-3" data-percent="2">
+                                    <label for="point7-3" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Анализ заинтересованности покупателя</span>
+                                        <span class="form-point-small-text grey-text">Выяснение мотивации, наличные,
+                                            ипотека, стадии одобрения, сертификаты, мат. капитал, опека, росвоенипотека
+                                            и т.д.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point7-4" name="7" value="7-4" data-percent="4">
+                                    <label for="point7-4" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Работа с потенциальными покупателями</span>
+                                        <span class="form-point-small-text grey-text">Закрытие возражений, одобрении
+                                            ипотеки, подготовка документооборота по опекам, сертификатам, росвоенипотеке
+                                            и т.д.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point7-5" name="7" value="7-5" data-percent="4">
+                                    <label for="point7-5" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Профессиональные переговоры с потенциальными
+                                            покупателями</span>
+                                        <span class="form-point-small-text grey-text">Обоснование и удержание цены
+                                            объекта, на основании маркетингового анализа рынка и преимуществ
+                                            объекта.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">3.2. Авансирование и подготовка
+                                    документов</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point8-1" name="8" value="8-1" data-percent="2">
+                                    <label for="point8-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Подготовка соглашения аванса / задатка</span>
+                                        <span class="form-point-small-text grey-text">Подготовка соглашения со всеми
+                                            юридицескими аспектами предстоящей сделки на выгодных условиях для
+                                            собственника объекта.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point8-2" name="8" value="8-2" data-percent="2">
+                                    <label for="point8-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Принятие аванса</span>
+                                        <span class="form-point-small-text grey-text">Принятие аванса (на компанию или
+                                            сопровождение собственника) / согласование этапов проведения сделки.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point8-3" name="8" value="8-3" data-percent="4">
+                                    <label for="point8-3" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Подготовка пакета документов для сделки</span>
+                                        <span class="form-point-small-text grey-text">Сбор полного пакета документов для
+                                            совершения сделки при наличии доверенности от собственника.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-block flex-box-column">
+                        <span class="form-title blue-text">4. Этап № 4 - Юридическая проверка / сопровождение
+                            сделки</span>
+                        <div class="form-points-block flex-box-column">
+                            <div class="form-point-block flex-box-column">
+                                <span class="form-point-title dark-text">4.1. Подготовка и проведение купли-продажи
+                                    объекта</span>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point9-1" name="9" value="9-1" data-percent="8">
+                                    <label for="point9-1" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Юридическая проверка всех участников
+                                            сделки</span>
+                                        <span class="form-point-small-text grey-text">Исполнительные производства /
+                                            Банкротство / Причастность к экстремизму и терроризму / Арбитражи и многое
+                                            другое.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point9-2" name="9" value="9-2" data-percent="4">
+                                    <label for="point9-2" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Согласование Договора купли-продажи</span>
+                                        <span class="form-point-small-text grey-text">Проверка и корректировка ДКП
+                                            юридицеским отделом компании защищая интересы клиента.</span>
+                                    </label>
+                                </div>
+                                <div class="form-point-element flex-box-row">
+                                    <input type="checkbox" id="point9-3" name="9" value="9-4" data-percent="2">
+                                    <label for="point9-3" class="form-point-text flex-box-column">
+                                        <span class="form-point-big-text">Юридицеское заключение и допуск на
+                                            сделку</span>
+                                        <span class="form-point-small-text grey-text">Выдача сертификата проверки /
+                                            рекомендации проведения сделки.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-button" id="submitButton">
+                    <span>Получить результат оценки в месенджер</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="popup-overlay" id="messengerPopup">
+        <div class="popup-content">
+            <h3>Выберите мессенджер для получения результата</h3>
+            <div class="messenger-options">
+                <button class="messenger-btn whatsapp-btn" data-messenger="whatsapp">
+                    WhatsApp
+                </button>
+                <button class="messenger-btn telegram-btn" data-messenger="telegram">
+                    Telegram
+                </button>
+            </div>
+            <button class="close-popup">&times;</button>
+        </div>
+    </div>
+
+    <!-- Попап ввода контактных данных -->
+    <div class="popup-overlay" id="contactPopup">
+        <div class="popup-content">
+            <h3 id="contactPopupTitle">Введите ваш номер телефона для WhatsApp</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="contactInput" required>
+                    <label id="contactLabel">Номер телефона (например: 79123456789)</label>
+                </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+            <button class="close-popup">&times;</button>
+        </div>
+    </div>
+
+    <!-- Попап успешной отправки -->
+    <div class="popup-overlay" id="successPopup">
+        <div class="popup-content">
+            <div class="success-icon">✓</div>
+            <h3>Данные успешно отправлены</h3>
+            <p>В ближайшее время менеджер вышлет вам результат и предоставит рекомендации по продаже вашего объекта</p>
+            <button class="close-popup">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        const { jsPDF } = window.jspdf;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Ваш существующий код для прогресс-бара
+            const form = document.getElementById('evaluationForm');
+            const loaderProgress = document.getElementById('loaderProgress');
+            const loaderText = document.getElementById('loaderText');
+            let currentPercent = 1;
+            let previousRadio = document.querySelector('input[type="radio"]:checked');
+
+            function updateLoader() {
+                currentPercent = Math.max(0, Math.min(100, currentPercent));
+                loaderProgress.style.width = currentPercent + '%';
+                loaderText.textContent = Math.round(currentPercent) + '%';
+            }
+
+            form.addEventListener('change', function (e) {
+                const target = e.target;
+
+                if (target.type === 'checkbox') {
+                    const percentValue = parseFloat(target.getAttribute('data-percent')) || 0;
+
+                    if (target.checked) {
+                        currentPercent += percentValue;
+                    } else {
+                        currentPercent -= percentValue;
+                    }
+                } else if (target.type === 'radio' && target.checked) {
+                    const percentValue = parseFloat(target.getAttribute('data-percent')) || 0;
+
+                    if (previousRadio) {
+                        const previousPercent = parseFloat(previousRadio.getAttribute('data-percent')) || 0;
+                        currentPercent = currentPercent - previousPercent;
+                    }
+                    currentPercent += percentValue;
+
+                    previousRadio = target;
+                }
+
+                updateLoader();
+            });
+
+            updateLoader();
+
+            // Код для работы с попапами
+            const submitButton = document.getElementById('submitButton');
+            const messengerPopup = document.getElementById('messengerPopup');
+            const contactPopup = document.getElementById('contactPopup');
+            const successPopup = document.getElementById('successPopup');
+            const contactForm = document.getElementById('contactForm');
+            const contactPopupTitle = document.getElementById('contactPopupTitle');
+            const contactLabel = document.getElementById('contactLabel');
+            const contactInput = document.getElementById('contactInput');
+
+            let selectedMessenger = null;
+
+            // Показать попап выбора мессенджера при клике на кнопку
+            submitButton.addEventListener('click', function () {
+                messengerPopup.style.display = 'flex';
+            });
+
+            // Обработчики для кнопок выбора мессенджера
+            document.querySelectorAll('.messenger-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    selectedMessenger = this.getAttribute('data-messenger');
+                    messengerPopup.style.display = 'none';
+
+                    // Настраиваем попап ввода данных в зависимости от выбранного мессенджера
+                    if (selectedMessenger === 'whatsapp') {
+                        contactPopupTitle.textContent = 'Введите ваш номер телефона для WhatsApp';
+                        contactLabel.textContent = 'Номер телефона (например: 79123456789)';
+                        contactInput.type = 'tel';
+                        contactInput.placeholder = '';
+                    } else {
+                        contactPopupTitle.textContent = 'Введите ваш никнейм в Telegram';
+                        contactLabel.textContent = 'Никнейм (например: @username)';
+                        contactInput.type = 'text';
+                        contactInput.placeholder = '';
+                    }
+
+                    contactPopup.style.display = 'flex';
+                });
+            });
+
+            // Обработчик отправки формы контактов
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const contactValue = contactInput.value.trim();
+
+                if (selectedMessenger === 'whatsapp' && !/^[\d+]{10,15}$/.test(contactValue)) {
+                    alert('Пожалуйста, введите корректный номер телефона');
+                    return;
+                }
+
+                if (selectedMessenger === 'telegram' && !/^@?\w{5,32}$/.test(contactValue)) {
+                    alert('Пожалуйста, введите корректный никнейм Telegram');
+                    return;
+                }
+
+                // Генерируем PDF
+                generatePDF(selectedMessenger, contactValue);
+
+                // Показываем попап успеха
+                contactPopup.style.display = 'none';
+                successPopup.style.display = 'flex';
+            });
+
+            // Закрытие попапов
+            document.querySelectorAll('.close-popup').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    this.closest('.popup-overlay').style.display = 'none';
+                });
+            });
+
+            // Функция для генерации PDF
+            function generatePDF(messenger, contact) {
+                // Создаем временный элемент для формирования содержимого PDF
+                const pdfContent = document.createElement('div');
+                pdfContent.style.padding = '20px';
+                pdfContent.style.maxWidth = '800px';
+                pdfContent.style.margin = '0 auto';
+                pdfContent.style.fontFamily = 'Arial, sans-serif';
+
+                // Заголовок
+                const title = document.createElement('h1');
+                title.textContent = 'Оценка эффективности продаваемого объекта';
+                title.style.textAlign = 'center';
+                title.style.color = '#1B2631';
+                pdfContent.appendChild(title);
+
+                // Прогресс
+                const progress = document.createElement('div');
+                progress.innerHTML = `<h2 style="text-align: center; color: #5898D2;">Итоговая оценка: ${Math.round(currentPercent)}%</h2>`;
+                pdfContent.appendChild(progress);
+
+                // Собранные данные из формы
+                const formData = document.createElement('div');
+
+                // Собираем все выбранные чекбоксы и радио-кнопки
+                const checkedItems = form.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
+
+                if (checkedItems.length > 0) {
+                    const listTitle = document.createElement('h3');
+                    listTitle.textContent = 'Выбранные пункты:';
+                    listTitle.style.marginTop = '30px';
+                    listTitle.style.color = '#1B2631';
+                    formData.appendChild(listTitle);
+
+                    const list = document.createElement('ul');
+                    list.style.marginLeft = '20px';
+
+                    checkedItems.forEach(item => {
+                        const listItem = document.createElement('li');
+                        const label = form.querySelector(`label[for="${item.id}"]`);
+                        if (label) {
+                            const labelText = label.querySelector('.form-point-big-text') || label;
+                            listItem.textContent = labelText.textContent.trim();
+                            listItem.style.marginBottom = '8px';
+                            list.appendChild(listItem);
+                        }
+                    });
+
+                    formData.appendChild(list);
+                }
+
+                pdfContent.appendChild(formData);
+
+                // Контактные данные
+                const contactInfo = document.createElement('div');
+                contactInfo.style.marginTop = '30px';
+                contactInfo.innerHTML = `
+            <h3 style="color: #1B2631;">Контактные данные:</h3>
+            <p>Мессенджер: ${messenger === 'whatsapp' ? 'WhatsApp' : 'Telegram'}</p>
+            <p>${messenger === 'whatsapp' ? 'Телефон' : 'Никнейм'}: ${contact}</p>
+            <p style="margin-top: 20px; font-size: 12px; color: #666;">Сгенерировано: ${new Date().toLocaleString()}</p>
+        `;
+                pdfContent.appendChild(contactInfo);
+
+                // Добавляем временный элемент в DOM
+                document.body.appendChild(pdfContent);
+
+                // Создаем PDF с помощью html2canvas и jsPDF
+                html2canvas(pdfContent).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const pdf = new jsPDF();
+                    const imgProps = pdf.getImageProperties(imgData);
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+                    // Сохраняем PDF
+                    pdf.save('Оценка_эффективности.pdf');
+
+                    // Отправляем данные на сервер (этот код нужно адаптировать под ваш бэкенд)
+                    sendDataToServer(pdf.output('blob'), messenger, contact, currentPercent);
+
+                    // Удаляем временный элемент
+                    document.body.removeChild(pdfContent);
+                });
+            }
+
+            // Функция для отправки данных на сервер (заглушка)
+            function sendDataToServer(pdfBlob, messenger, contact, percent) {
+                // В реальном приложении здесь должен быть AJAX-запрос к вашему серверу
+                console.log('Отправка данных на сервер:', {
+                    messenger,
+                    contact,
+                    percent,
+                    pdf: pdfBlob
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
