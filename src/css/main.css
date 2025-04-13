@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f1f2f6;
+    font-family: Montserrat;
+}
+
+.wrapper {
+    max-width: 1686px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 30px auto;
+}
+
+.white-block {
+    background-color: #fff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    gap: 40px;
+}
+
+.flex-box-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-box-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.dark-text {
+    color: #1B2631;
+}
+
+.blue-text {
+    color: #5898D2;
+}
+
+.grey-text {
+    color: #8C8D8F;
+}
+
+.white-text {
+    color: #fff;
+}
+
+/* страница */
+
+.page-top {
+    gap: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    border-bottom: 2px solid #DEDEDE;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.loader {
+    width: 100%;
+    background-color: #f1f2f6;
+    border-radius: 30px;
+    height: 50px;
+    padding: 14px;
+    position: relative;
+}
+
+.loader-progress {
+    background-color: #5898D2;
+    border-radius: 20px;
+    width: 9%;
+    height: 100%;
+    position: relative;
+    transition: width 0.3s ease;
+}
+
+.loader-progress-text {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.form {
+    gap: 40px;
+
+}
+
+.form-block {
+    gap: 35px;
+    padding: 30px;
+    background-color: #f1f2f6;
+    border-radius: 8px;
+}
+
+.form-points-block {
+    gap: 25px;
+    padding-left: 30px;
+}
+
+.form-point-block {
+    gap: 20px;
+}
+
+.form-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.form-point-element {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 14px;
+    gap: 25px;
+    transition: all 0.3s;
+}
+
+.form-point-element:hover {
+    background-color: #5898D2;
+}
+
+.form-point-element:hover .form-point-text,
+.form-point-element:hover .form-point-small-text {
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.form-point-element input {
+    min-width: 28px;
+    min-height: 28px;
+}
+
+.form-point-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.form-point-text {
+    gap: 20px;
+}
+
+.form-point-big-text {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 100%;
+    transition: all 0.3s;
+}
+
+.form-point-small-text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 100%;
+    transition: all 0.3s;
+}
+
+.itallic {
+    font-style: italic;
+}
+
+.loader-progress[style*="width: 0%"] .loader-progress-text,
+.loader-progress[style*="width: 1%"] .loader-progress-text,
+.loader-progress[style*="width: 2%"] .loader-progress-text,
+.loader-progress[style*="width: 3%"] .loader-progress-text,
+.loader-progress[style*="width: 4%"] .loader-progress-text {
+    color: #1B2631 !important;
+    right: auto;
+    font-weight: 700;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader-progress[style*="width: 0%"],
+.loader-progress[style*="width: 1%"],
+.loader-progress[style*="width: 2%"],
+.loader-progress[style*="width: 3%"],
+.loader-progress[style*="width: 4%"] {
+    position: unset !important;
+}
+
+
+.form-button{
+    background-color: #f1f2f6;
+    color: #1B2631;
+    text-transform: uppercase;
+    padding: 0 15px;
+    margin: 0 auto;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    font-size: 20px;
+    display: flex;
+    border-radius: 15px;
+    border: 2px solid #1B2631;
+    font-weight: 600;
+}
+
+.form-button:hover{
+    color: #fff;
+    border: none !important;
+    background-color: #5898D2 !important;
+    cursor: pointer;
+}
+@media(max-width: 768px) {
+
+    .loader-progress[style*="width: 0%"] .loader-progress-text,
+    .loader-progress[style*="width: 1%"] .loader-progress-text,
+    .loader-progress[style*="width: 2%"] .loader-progress-text,
+    .loader-progress[style*="width: 3%"] .loader-progress-text,
+    .loader-progress[style*="width: 4%"] .loader-progress-text,
+    .loader-progress[style*="width: 5%"] .loader-progress-text, 
+    .loader-progress[style*="width: 6%"] .loader-progress-text,
+    .loader-progress[style*="width: 7%"] .loader-progress-text,
+    .loader-progress[style*="width: 8%"] .loader-progress-text,
+    .loader-progress[style*="width: 9%"] .loader-progress-text
+    {
+        color: #1B2631 !important;
+        right: auto;
+        font-weight: 700;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .loader-progress[style*="width: 0%"],
+    .loader-progress[style*="width: 1%"],
+    .loader-progress[style*="width: 2%"],
+    .loader-progress[style*="width: 3%"],
+    .loader-progress[style*="width: 4%"],
+    .loader-progress[style*="width: 5%"], 
+    .loader-progress[style*="width: 6%"] ,
+    .loader-progress[style*="width: 7%"],
+    .loader-progress[style*="width: 8%"],
+    .loader-progress[style*="width: 9%"]{
+        position: unset !important;
+    }
+    
+}
+
+@media(max-width: 450px){
+    .loader-progress-text{
+        color: #1B2631 !important;
+        right: auto;
+        font-weight: 700;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+    .loader-progress{
+        position: unset !important;
+    }
+}
+
+
